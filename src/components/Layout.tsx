@@ -31,23 +31,18 @@ const GlobalStyle = createGlobalStyle`
   }
   blockquote {
     font-style: italic;
-    position: relative;
+    border-left: 5px ${theme.colors.primary};
+    border-left-style: solid;
+    padding: 0.5em 1em;
+    margin: 0;
+    margin-bottom: 1.66rem;
   }
 
-  blockquote:before {
-    content: "";
-    position: absolute;
-    background: ${theme.colors.primary};
-    height: 100%;
-    width: 6px;
-    margin-left: -1.6rem;
-  }
   label {
     margin-bottom: .5rem;
     color: ${theme.colors.grey.dark};
   }
   input, textarea {
-    border-radius: .5rem;
     border: none;
     background: rgba(0, 0, 0, 0.05);
     padding: .25rem 1rem;
@@ -87,8 +82,7 @@ export class Layout extends React.PureComponent<{}> {
               <GlobalStyle />
               {children}
               <Footer>
-                &copy; {split(data.site.buildTime, '.')[2]} by Majid Hajian. All rights reserved. <br />
-                <a href="https://github.com/mhadaily/gatsby-starter-typescirpt-power-blog">GitHub Repository</a> <br />
+                &copy; {split(data.site.buildTime, '.')[2]} by ZenTauro. All rights reserved. <br />
                 <span>Last build: {data.site.buildTime}</span>
               </Footer>
             </React.Fragment>

@@ -1,0 +1,36 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    background-color: #f7faff;
+}
+
+h1.header-banner {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+ul.navigation {
+    display: flex;
+    margin: 0;
+    padding: 0.5em 0;
+}
+
+li.header-item {
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+}
+li.header-item > a {
+    margin: 0;
+    padding: 0.5em 1em;
+    justify-content: center;
+    text-align: center;
+}
+
+/* li.header-item:hover > a { } */

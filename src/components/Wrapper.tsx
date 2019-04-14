@@ -4,9 +4,10 @@ import { media } from '../utils/media';
 export const Wrapper: any = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  flex-wrap: wrap;
+  margin: 1em 0;
   max-width: ${(props: any) => (props.fullWidth ? '100%' : '100rem')};
-  padding: ${(props: any) => (props.fullWidth ? '0' : '0 6rem')};
+  padding:   ${(props: any) => (props.fullWidth ? '0' : '0 6rem')};
   @media ${media.tablet} {
     padding: ${(props: any) => (props.fullWidth ? '0' : '0 3rem')};
   }
