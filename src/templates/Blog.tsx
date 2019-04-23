@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import { Layout, Article, Wrapper, SectionTitle, Header, Content, Pagination } from '../components';
+import { Layout, Article, Wrapper, SectionTitle, HeaderBar, Content, Pagination } from '../components';
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 import Data from '../models/Data';
@@ -23,11 +23,9 @@ export default class BlogPage extends React.Component<Props> {
     return (
       <Layout>
         <Helmet title={`Blog | ${config.siteTitle}`} />
-        <Header>
-          <Link to="/">{config.siteTitle}</Link>
-          <SectionTitle uppercase={true}>Latest stories ({totalCount})</SectionTitle>
-        </Header>
+        <HeaderBar />
         <Wrapper>
+          <SectionTitle uppercase={true}>Latest posts ({totalCount})</SectionTitle>
           <Content>
             {edges.map(post => (
               <Article

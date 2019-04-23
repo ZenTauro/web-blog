@@ -7,23 +7,14 @@ import { Subline } from './Subline';
 const Post = styled.article`
   display: flex;
   flex-direction: column;
-  margin-top: 3.5rem;
+  margin-top: 1em;
   margin-bottom: 3.5rem;
 `;
 
 const Title = styled.h2`
-  position: relative;
-  text-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-  margin-bottom: 0.75rem;
-`;
-
-const Initiale = styled.span`
-  position: absolute;
-  font-size: 7rem;
-  transform: translate(-50%, -50%);
-  opacity: 0.08;
-  user-select: none;
-  z-index: -1;
+  text-decoration-color: ${props => props.theme.colors.primary};
+  text-decoration-line: underline;
+  margin-bottom: 0.25em;
 `;
 
 const Excerpt = styled.p`
@@ -44,13 +35,13 @@ interface Props {
 export class Article extends React.PureComponent<Props> {
   public render() {
     const { title, date, excerpt, slug, timeToRead, category } = this.props;
-    const firstChar = title.charAt(0);
 
     return (
       <Post>
         <Title>
-          <Initiale>{firstChar}</Initiale>
-          <Link to={`/blog/${slug}`}>{title}</Link>
+          <Link to={`/blog/${slug}`} style={{ textDecoration: 'inherit' }}>
+            {title}
+          </Link>
         </Title>
         <Subline>
           {date} &mdash; {timeToRead} Min Read &mdash; In

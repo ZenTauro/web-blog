@@ -1,5 +1,5 @@
-const path = require('path');
-const _ = require('lodash');
+const path   = require('path');
+const _      = require('lodash');
 const config = require('./config/SiteConfig').default;
 
 exports.onCreateNode = ({ node, actions }) => {

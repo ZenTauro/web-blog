@@ -7,18 +7,17 @@ import curriedDarken from 'polished/lib/color/darken';
 
 export const PaginationContainer = styled.div`
   text-align: center;
-  margin: 2rem;
+  margin: 0;
   }
 `;
 
 export const PaginationContent = styled.div`
     display: inline-block;
     padding: 0 2.5rem;
-    border-radius: 3.5rem;
     background-color: #eee;
     
      @media ${media.phone} {
-      padding: 0 1rem;
+      padding: 0 1em;
      }
 
     .page-numbers {
@@ -55,7 +54,6 @@ export const PaginationContent = styled.div`
         display: none;
 
         &:nth-of-type(2) {
-          position: relative;
           padding-right: 5rem;
 
           &::after {

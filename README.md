@@ -1,22 +1,9 @@
-## Gatsby 2 Power blog starter with Typescript
-More features are coming, stay tuned! 
+# My personal blog
+This is the place where the development of my personal page takes place.
+The blog it's based on [this starter](https://github.com/mhadaily/gatsby-starter-typescript-power-blog)
 
-## Success Stories:
-- I am using this template for my website https://www.majidhajian.com
-
-### Description
+## Starter description
 This is a standard starter with Typescript, TSLint, StyleLint, Prettier, Lint-Staged(Husky), Sass, StyleComponent, PWA
-
-#### Desktop
-<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/desktop.png">
-
-#### Mobile
-<img src="https://raw.githubusercontent.com/mhadaily/gatsby-starter-typescript-power-blog/master/mobile.png" width="300px">
-
-### new project
-```
-gatsby new my_blog https://github.com/mhadaily/gatsby-starter-typescript-power-blog
-```
 
 ### Keywords
   - PWA
