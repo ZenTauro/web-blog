@@ -5,6 +5,8 @@ import PageProps from '../models/PageProps';
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 
+const bg1: string = require('../assets/bg1.png');
+
 export default class IndexPage extends Component<PageProps> {
   public render() {
     // const { data } = this.props;
@@ -15,7 +17,8 @@ export default class IndexPage extends Component<PageProps> {
         <HeaderBar />
         <Wrapper>
           <Content>
-            <p>Hello guys</p>
+            <h1>Zentauro's Blog</h1>
+            <img src={bg1} alt="emacs background" />
           </Content>
         </Wrapper>
       </Layout>

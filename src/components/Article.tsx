@@ -35,7 +35,6 @@ interface Props {
 export class Article extends React.PureComponent<Props> {
   public render() {
     const { title, date, excerpt, slug, timeToRead, category } = this.props;
-    const firstChar = title.charAt(0);
 
     return (
       <Post>

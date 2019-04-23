@@ -1,7 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
-import { Layout, Wrapper, HeaderBar, Button, Content } from '../components';
+import { Layout, Wrapper, HeaderBar, Content } from '../components';
 
 import config from '../../config/SiteConfig';
 import PageProps from '../models/PageProps';

@@ -8,7 +8,7 @@ import SiteConfig from '../../config/SiteConfig';
 import './header.scss';
 
 export const Nav: any = styled.nav`
-  padding:   ${(props: any) => (props.fullWidth ? '0' : '0 6rem')};
+  padding: ${(props: any) => (props.fullWidth ? '0' : '0 6rem')};
   @media ${media.tablet} {
     padding: ${(props: any) => (props.fullWidth ? '0' : '0 3rem')};
   }
@@ -57,10 +57,10 @@ export class Header extends PureComponent<IHeaderProps> {
 
 export class HeaderBar extends PureComponent<any> {
   public render() {
-    return(
+    return (
       <Header>
-        <HeaderItem name="blog" link="/blog" />
-        <HeaderItem name="contact" link="/contact" />
+        <HeaderItem name="BLOG" link="/blog" />
+        <HeaderItem name="CONTACT" link="/contact" />
       </Header>
     );
   }
