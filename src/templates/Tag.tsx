@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import PageProps from '../models/PageProps';
-import { Article, Content, Header, Layout, SectionTitle, Subline, Wrapper } from '../components';
+import { Article, Content, HeaderBar, Layout, SectionTitle, Subline, Wrapper } from '../components';
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 import kebabCase from 'lodash/kebabCase';
@@ -15,14 +15,13 @@ export default class TagTemplate extends React.PureComponent<PageProps> {
     return (
       <Layout>
         <Helmet title={`${'Tags'} | ${config.siteTitle}`} />
-        <Header>
+        <HeaderBar />
+        <Wrapper>
           <Link to="/">{config.siteTitle}</Link>
           <SectionTitle>Tag &ndash; {tagName}</SectionTitle>
           <Subline sectionTitle light={true}>
             {subline} (See <Link to="/tags">all tags</Link>)
           </Subline>
-        </Header>
-        <Wrapper>
           <Content>
             {posts
               ? posts.map((post: any, index) => (
