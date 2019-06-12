@@ -16,7 +16,7 @@ exports.onCreateNode = ({ node, actions }) => {
  * @param classificationType 
  * @returns postsByType
  */
-const getPostsByType = (posts, classificationType) => {
+function getPostsByType (posts, classificationType) {
 	const postsByType = {};
 	posts.forEach(({ node }) => {
 		const nodeClassificationType = node.frontmatter[classificationType];
@@ -40,7 +40,7 @@ const getPostsByType = (posts, classificationType) => {
 	return postsByType;
 };
 
-const createClassificationPages = ({ createPage, posts, postsPerPage, numPages }) => {
+function createClassificationPages({ createPage, posts, postsPerPage, numPages }) {
 	const classifications = [
 		{
 			singularName: 'category',

@@ -1,4 +1,4 @@
-import './IImage';
+import { IImage } from './IImage';
 
 interface Frontmatter {
   date: string;

@@ -7,7 +7,7 @@ import BackgroundImage from 'gatsby-background-image';
 
 import { media } from '../utils/media';
 
-import '../models/IImage';
+import { IImage, IChildImageSharp } from '../models/IImage';
 
 const Post = styled.article`
   display: grid;
@@ -55,7 +55,7 @@ interface Props {
   excerpt: string;
   slug: string;
   timeToRead: number;
-  image: IImage;
+  image: IChildImageSharp;
   category: string;
 }
 
@@ -63,10 +63,12 @@ export class Article extends React.PureComponent<Props> {
   public render() {
     const { title, image, date, excerpt, slug, timeToRead, category } = this.props;
 
+    const img = image.fluid;
+
     return (
       <Link to={`/blog/${slug}`}>
         <Post>
-          <BackgroundImage fluid={image.fluid} />
+          <BackgroundImage fluid={img} />
           <Rest>
             <Title>
               <Link to={`/blog/${slug}`} style={{ textDecoration: 'inherit' }}>

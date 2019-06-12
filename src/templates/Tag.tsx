@@ -28,6 +28,7 @@ export default class TagTemplate extends React.PureComponent<PageProps> {
                   <Article
                     title={post.frontmatter.title}
                     date={post.frontmatter.date}
+                    image={post.frontmatter.image.childImageSharp}
                     excerpt={post.excerpt}
                     slug={kebabCase(post.frontmatter.title)}
                     timeToRead={post.timeToRead}
