@@ -34,19 +34,6 @@ module.exports = {
             }
         },
         {
-            resolve: 'gatsby-transformer-remark',
-            options: {
-                plugins: [
-                    {
-                        resolve: 'gatsby-remark-images',
-                        options: {
-                            maxWidth: 600
-                        }
-                    }
-                ]
-            }
-        },
-        {
             resolve: `gatsby-plugin-google-tagmanager`,
             options: {
                 id: config.Google_Tag_Manager_ID,
@@ -66,8 +53,15 @@ module.exports = {
                             rel: 'nofollow noopener noreferrer'
                         }
                     },
+                    {
+                        resolve: 'gatsby-remark-images',
+                        options: {
+                            maxWidth: 600
+                        }
+                    },
                     'gatsby-remark-prismjs',
-                    'gatsby-remark-autolink-headers'
+                    'gatsby-remark-autolink-headers',
+                    'gatsby-remark-copy-images'
                 ]
             }
         },
