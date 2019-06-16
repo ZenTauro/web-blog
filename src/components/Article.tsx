@@ -63,12 +63,10 @@ export class Article extends React.PureComponent<Props> {
   public render() {
     const { title, image, date, excerpt, slug, timeToRead, category } = this.props;
 
-    const img = image.fluid;
-
     return (
       <Link to={`/blog/${slug}`}>
         <Post>
-          <BackgroundImage fluid={img} />
+          <BackgroundImage fluid={image.fluid} />
           <Rest>
             <Title>
               <Link to={`/blog/${slug}`} style={{ textDecoration: 'inherit' }}>

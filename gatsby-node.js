@@ -119,7 +119,35 @@ exports.createPages = ({ actions, graphql }) => {
             category
             tags
             image {
-              relativePath
+			  relativePath
+			  childImageSharp {
+              	fluid {
+                	aspectRatio
+                	base64
+                	originalImg
+                	originalName
+                	presentationHeight
+                	presentationWidth
+                	sizes
+                	src
+                	srcSet
+                	srcSetWebp
+                	srcWebp
+                	tracedSVG
+              	}
+              	fixed {
+                	width
+                	tracedSVG
+                	srcWebp
+                	srcSet
+                	srcSetWebp
+                	src
+                	originalName
+                	height
+                	base64
+                	aspectRatio
+            	}
+				}
             }
             banner
           }
