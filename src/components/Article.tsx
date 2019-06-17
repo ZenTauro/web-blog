@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import kebabCase from 'lodash/kebabCase';
 import { Subline } from './Subline';
 import BackgroundImage from 'gatsby-background-image';
 
 import { media } from '../utils/media';
+import { IChildImageSharp } from '../models/IImage';
 
-import { IImage, IChildImageSharp } from '../models/IImage';
+import './Article.scss';
 
 const Post = styled.article`
   display: grid;
@@ -23,6 +23,7 @@ const Post = styled.article`
   }
 
   max-width: 30em;
+  transition: ease-out 0.25s;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 20px 2px;
 
   background-color: #fff;
@@ -44,7 +45,7 @@ const Excerpt = styled.p`
   margin-bottom: 1rem;
 `;
 
-const Rest = styled.p`
+const Rest = styled.div`
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 `;
@@ -64,18 +65,13 @@ export class Article extends React.PureComponent<Props> {
     const { title, image, date, excerpt, slug, timeToRead, category } = this.props;
 
     return (
-      <Link to={`/blog/${slug}`}>
+      <Link to={`/blog/${slug}`} className="card">
         <Post>
           <BackgroundImage fluid={image.fluid} />
           <Rest>
-            <Title>
-              <Link to={`/blog/${slug}`} style={{ textDecoration: 'inherit' }}>
-                {title}
-              </Link>
-            </Title>
+            <Title> {title} </Title>
             <Subline>
-              {date} &mdash; {timeToRead} Min Read &mdash; In
-              <Link to={`/categories/${kebabCase(category)}`}> {category}</Link>
+              {date} &mdash; {timeToRead} Min Read &mdash; In {category}
             </Subline>
             <Excerpt>{excerpt}</Excerpt>
           </Rest>
