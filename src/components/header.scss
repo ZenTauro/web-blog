@@ -7,6 +7,7 @@ nav {
     position: sticky;
     top: 0;
     background-color: #fff;
+    z-index: 1;
     box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
 }
 
@@ -25,6 +26,7 @@ ul.navigation {
 li.header-item {
     list-style: none;
     display: inline-block;
+    font-size: 0.75em;
     margin: 0;
 }
 li.header-item > a {

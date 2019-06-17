@@ -46,13 +46,13 @@ export class PrevNext extends React.PureComponent<Props> {
         {prev && (
           <Prev>
             <span>Previous</span>
-            <Link to={`/blog/${kebabCase(prev.frontmatter.title)}`}>{prev.frontmatter.title}</Link>
+            <Link to={`/blog/${kebabCase(prev.frontmatter.date + prev.frontmatter.title)}`}>{prev.frontmatter.title}</Link>
           </Prev>
         )}
         {next && (
           <Next>
             <span>Next</span>
-            <Link to={`/blog/${kebabCase(next.frontmatter.title)}`}>{next.frontmatter.title}</Link>
+            <Link to={`/blog/${kebabCase(next.frontmatter.date + next.frontmatter.title)}`}>{next.frontmatter.title}</Link>
           </Next>
         )}
       </Wrapper>
