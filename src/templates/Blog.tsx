@@ -3,7 +3,11 @@ import { graphql } from 'gatsby';
 import { Layout, Article, Wrapper, SectionTitle, HeaderBar, Content, Pagination } from '../components';
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
-import Data from '../models/Data';
+import * as types from '../graphqlTypes';
+
+interface Data {
+  allMarkdownRemark: types.MarkdownRemarkConnection;
+}
 
 interface Props {
   data: Data;
@@ -53,6 +57,7 @@ export default class BlogPage extends React.Component<Props> {
     );
   }
 }
+
 export const BlogQuery = graphql`
   query($skip: Int!, $limit: Int!) {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: $limit, skip: $skip) {

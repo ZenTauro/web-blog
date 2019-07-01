@@ -18,6 +18,9 @@
     "fix": "prettier --write 'src/**/*.{ts,tsx,scss,md}' && tslint --fix 'src/**/*.{ts,tsx}' -p tsconfig.json && stylelint --fix 'src/**/*.scss' "
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.3.1",
+    "@graphql-codegen/typescript": "^1.3.1",
+    "@graphql-codegen/typescript-operations": "^1.3.1",
     "@types/lodash": "^4.14.134",
     "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
