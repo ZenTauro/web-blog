@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { media } from '../utils/media';
 
 export const Content = styled.div`
-  padding: 2rem 4rem;
+  padding: 2rem 0;
   background-color: ${props => props.theme.colors.bg};
   form {
     p {

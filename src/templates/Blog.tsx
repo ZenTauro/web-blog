@@ -1,9 +1,13 @@
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import { Layout, Article, Wrapper, SectionTitle, HeaderBar, Content, Pagination } from '../components';
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
-import Data from '../models/Data';
+import * as types from '../graphqlTypes';
+
+interface Data {
+  allMarkdownRemark: types.MarkdownRemarkConnection;
+}
 
 interface Props {
   data: Data;
@@ -26,11 +30,19 @@ export default class BlogPage extends React.Component<Props> {
         <HeaderBar />
         <Wrapper>
           <SectionTitle uppercase={true}>Latest posts ({totalCount})</SectionTitle>
-          <Content>
+          <Content
+            style={{
+              display: 'flex',
+              flexFlow: 'row wrap',
+              justifyContent: 'space-between',
+              alignContent: 'flex-start',
+            }}
+          >
             {edges.map(post => (
               <Article
                 title={post.node.frontmatter.title}
                 date={post.node.frontmatter.date}
+                image={post.node.frontmatter.image.childImageSharp}
                 excerpt={post.node.excerpt}
                 timeToRead={post.node.timeToRead}
                 slug={post.node.fields.slug}
@@ -38,13 +50,14 @@ export default class BlogPage extends React.Component<Props> {
                 key={post.node.fields.slug}
               />
             ))}
-            <Pagination currentPage={currentPage} totalPages={totalPages} url={'blog'} />
           </Content>
+          <Pagination currentPage={currentPage} totalPages={totalPages} url={'blog'} />
         </Wrapper>
       </Layout>
     );
   }
 }
+
 export const BlogQuery = graphql`
   query($skip: Int!, $limit: Int!) {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: $limit, skip: $skip) {
@@ -54,13 +67,29 @@ export const BlogQuery = graphql`
           fields {
             slug
           }
+          excerpt(pruneLength: 200)
+          timeToRead
           frontmatter {
             title
             date(formatString: "DD.MM.YYYY")
             category
+            image {
+              childImageSharp {
+                fixed {
+                  base64
+                  src
+                  srcWebp
+                  srcSetWebp
+                }
+                fluid {
+                  base64
+                  src
+                  srcWebp
+                  srcSetWebp
+                }
+              }
+            }
           }
-          excerpt(pruneLength: 200)
-          timeToRead
         }
       }
     }

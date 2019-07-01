@@ -6,6 +6,11 @@
     "tslint-config-blvd/react",
     "tslint-config-prettier"
   ],
+  "linterOptions": {
+    "exclude": [
+      "src/graphqlTypes.ts"
+    ]
+  },
   "rules": {
     "prettier": true
   }

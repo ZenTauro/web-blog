@@ -7,7 +7,7 @@ import SiteConfig from '../../config/SiteConfig';
 
 import './header.scss';
 
-export const Nav: any = styled.nav`
+const Nav: any = styled.nav`
   padding: ${(props: any) => (props.fullWidth ? '0' : '0 6rem')};
   @media ${media.tablet} {
     padding: ${(props: any) => (props.fullWidth ? '0' : '0 3rem')};
@@ -26,13 +26,13 @@ interface IHeaderProps {
   children: any[];
 }
 
-export class HeaderItem extends PureComponent<IHeaderItemProps> {
+class HeaderItem extends PureComponent<IHeaderItemProps> {
   public render() {
     return <Link to={this.props.link}> {this.props.name} </Link>;
   }
 }
 
-export class Header extends PureComponent<IHeaderProps> {
+class Header extends PureComponent<IHeaderProps> {
   public render() {
     return (
       <Nav>
