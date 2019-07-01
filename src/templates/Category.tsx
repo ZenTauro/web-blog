@@ -24,7 +24,7 @@ export default class Category extends React.PureComponent<PageProps> {
           </Subline>
           <Content>
             {posts
-              ? posts.map((post: any, index) => (
+              ? posts.map((post, index) => (
                   <Article
                     title={post.frontmatter.title}
                     date={post.frontmatter.date}
