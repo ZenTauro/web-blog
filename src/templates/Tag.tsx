@@ -5,6 +5,7 @@ import { Article, Content, HeaderBar, Layout, SectionTitle, Subline, Wrapper } f
 import Helmet from 'react-helmet';
 import config from '../../config/SiteConfig';
 import kebabCase from 'lodash/kebabCase';
+import * as types from '../graphqlTypes';
 
 export default class TagTemplate extends React.PureComponent<PageProps> {
   public render() {
@@ -30,7 +31,7 @@ export default class TagTemplate extends React.PureComponent<PageProps> {
                     date={post.frontmatter.date}
                     image={post.frontmatter.image.childImageSharp}
                     excerpt={post.excerpt}
-                    slug={kebabCase(post.frontmatter.title)}
+                    slug={kebabCase(post.frontmatter.date + post.frontmatter.title)}
                     timeToRead={post.timeToRead}
                     category={post.frontmatter.category}
                     key={index}

@@ -29,7 +29,7 @@ export default class Category extends React.PureComponent<PageProps> {
                     title={post.frontmatter.title}
                     date={post.frontmatter.date}
                     excerpt={post.excerpt}
-                    slug={kebabCase(post.frontmatter.title)}
+                    slug={kebabCase(post.frontmatter.date + post.frontmatter.title)}
                     timeToRead={post.timeToRead}
                     category={post.frontmatter.category}
                     image={post.frontmatter.image.childImageSharp}
