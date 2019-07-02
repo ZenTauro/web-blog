@@ -6,6 +6,7 @@ import { media } from '../utils/media';
 import SiteConfig from '../../config/SiteConfig';
 
 import './header.scss';
+import Theme from '../../config/Theme';
 
 const Nav: any = styled.nav`
   padding: ${(props: any) => (props.fullWidth ? '0' : '0 6rem')};
@@ -23,7 +24,7 @@ interface IHeaderItemProps {
 }
 
 interface IHeaderProps {
-  children: any[];
+  children: JSX.Element[];
 }
 
 class HeaderItem extends PureComponent<IHeaderItemProps> {
@@ -35,27 +36,30 @@ class HeaderItem extends PureComponent<IHeaderItemProps> {
 class Header extends PureComponent<IHeaderProps> {
   public render() {
     return (
-      <Nav>
-        <h1 className="header-banner">
-          <Link to="/"> {SiteConfig.siteTitle} </Link>
-        </h1>
-        <div>
-          <ul className="navigation">
-            {this.props.children.map((item, i) => {
-              return (
-                <li className="header-item" key={i}>
-                  {item}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </Nav>
+      <div className="header-wrapper">
+        <Nav>
+          <h1 className="header-banner">
+            <Link to="/"> {SiteConfig.siteTitle} </Link>
+          </h1>
+          <div>
+            <ul className="navigation">
+              {this.props.children.map((item, i) => {
+                return (
+                  <li className="header-item" key={i}>
+                    {item}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </Nav>
+        <div style={{ backgroundColor: Theme.colors.primary, padding: '0.25em' }} />
+      </div>
     );
   }
 }
 
-export class HeaderBar extends PureComponent<any> {
+export class HeaderBar extends PureComponent<{}> {
   public render() {
     return (
       <Header>

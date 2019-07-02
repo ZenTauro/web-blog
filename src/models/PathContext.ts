@@ -1,13 +1,13 @@
 import Post from './Post';
 
-interface PathContext {
+interface PathContext<T> {
   tags?: string[];
   categories?: string[];
   categoryName: string;
   tagName?: string;
   posts?: Post[];
-  next: any;
-  prev: any;
+  next: T;
+  prev: T;
 }
 
 export default PathContext;

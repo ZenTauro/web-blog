@@ -1,13 +1,16 @@
+div.header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     justify-items: center;
     align-items: center;
     margin: 0;
-    position: sticky;
-    top: 0;
     background-color: #fff;
-    z-index: 1;
     box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
 }
 
@@ -31,7 +34,7 @@ li.header-item {
 }
 li.header-item > a {
     margin: 0;
-    padding: 0.5em 1em;
+    padding: 1em;
     justify-content: center;
     text-align: center;
 }
