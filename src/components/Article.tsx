@@ -40,7 +40,7 @@ const Post = styled.article`
 const Title = styled.h2`
   text-decoration-color: ${props => props.theme.colors.primary};
   text-decoration-line: underline;
-  font-size: 1.5em;
+  font-size: 1.7em;
   margin-bottom: 0.5em;
 `;
 
