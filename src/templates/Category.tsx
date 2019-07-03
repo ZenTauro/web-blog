@@ -17,9 +17,8 @@ export default class Category extends React.PureComponent<PageProps> {
         <Helmet title={`${categoryName} | ${config.siteTitle}`} />
         <HeaderBar />
         <Wrapper>
-          <Link to="/">{config.siteTitle}</Link>
           <SectionTitle>Category &ndash; {categoryName}</SectionTitle>
-          <Subline sectionTitle light={true}>
+          <Subline sectionTitle>
             {subline} (See <Link to="/categories">all categories</Link>)
           </Subline>
           <Content>
