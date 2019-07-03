@@ -16,7 +16,11 @@ interface IBlogHeaderProps {
 const BlogBg = styled(BackgroudImage)`
   height: 75vh;
   z-index: -1;
-  ::after {
+  background-attachment: fixed;
+  &::after {
+    background-attachment: fixed;
+  }
+  &::before {
     background-attachment: fixed;
   }
 `;
@@ -33,7 +37,7 @@ export class BlogHeader extends React.PureComponent<IBlogHeaderProps> {
 
     return (
       <>
-        <BlogBg fluid={image} />
+        <BlogBg fluid={image} style={{ backgroundAttachment: 'fixed' }} />
         <Wrapper>
           <SectionTitle center={false}>
             <span style={{ background: Theme.colors.primary, padding: '5px', margin: '0' }}>{post.frontmatter.title}</span>
