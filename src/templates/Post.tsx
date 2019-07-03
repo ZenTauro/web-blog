@@ -10,6 +10,7 @@ import PathContext from '../models/PathContext';
 import Post from '../models/Post';
 import { BlogHeader } from '../components/BlogHeader';
 import Theme from '../../config/Theme';
+import Tag from '../components/Tag';
 
 const PostContent = styled.div`
   margin-top: 1em;
@@ -44,7 +45,7 @@ export default class PostPage extends React.PureComponent<Props> {
                     Tags: &#160;
                     {post.frontmatter.tags.map((tag, i) => (
                       <Link key={i} to={`/tags/${kebabCase(tag)}`}>
-                        <strong>{tag}</strong> {i < post.frontmatter.tags.length - 1 ? `, ` : ``}
+                        <Tag name={tag} /> {i < post.frontmatter.tags.length - 1 ? ` ` : ``}
                       </Link>
                     ))}
                   </Subline>
