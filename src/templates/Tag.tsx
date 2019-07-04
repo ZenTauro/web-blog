@@ -17,6 +17,8 @@ const SubLn = styled(Subline)`
   color: ${Theme.colors.bg};
   display: inline-block;
   margin: 0;
+  padding-left: 1em;
+  padding-right: 1em;
 `;
 
 export default class TagTemplate extends React.PureComponent<PageProps> {
