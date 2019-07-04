@@ -13,7 +13,7 @@ interface IBlogHeaderProps {
   post: Post;
 }
 
-const BlogBg = styled(BackgroudImage)`
+export const BlogBg = styled(BackgroudImage)`
   height: 75vh;
   z-index: -1;
   background-attachment: fixed;

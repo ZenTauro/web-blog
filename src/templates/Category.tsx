@@ -5,6 +5,7 @@ import { Layout, Wrapper, HeaderBar, Subline, Article, SectionTitle, Content } f
 import config from '../../config/SiteConfig';
 import kebabCase from 'lodash/kebabCase';
 import PageProps from '../models/PageProps';
+import Post from '../models/Post';
 
 export default class Category extends React.PureComponent<PageProps> {
   public render() {
@@ -21,9 +22,9 @@ export default class Category extends React.PureComponent<PageProps> {
           <Subline sectionTitle>
             {subline} (See <Link to="/categories">all categories</Link>)
           </Subline>
-          <Content>
+          <Content style={{ display: 'flex', flexFlow: 'row wrap', justifyContent: 'space-between' }}>
             {posts
-              ? posts.map((post, index) => (
+              ? posts.map((post: Post, index: number) => (
                   <Article
                     title={post.frontmatter.title}
                     date={post.frontmatter.date}

@@ -1,23 +1,23 @@
 import * as React from 'react';
-import { FaTag } from 'react-icons/fa';
+import { FaTag, FaTags } from 'react-icons/fa';
 import styled from 'styled-components';
 import Theme from '../../config/Theme';
 
 interface ITagProps {
-  name: string;
+  children?: any;
+  square?: boolean;
+  multiple?: boolean;
+  light?: boolean;
 }
 
 const TagContainer = styled.div`
   display: inline-flex;
   flex-flow: row nowrap;
   align-items: center;
-  background-color: ${Theme.colors.primary};
+  background-color: ${(props: ITagProps) => (props.light ? Theme.colors.bg : Theme.colors.primary)};
   padding: 0 0.5em;
-  border-radius: 1em;
+  border-radius: ${(props: ITagProps) => (props.square ? '0' : '1em')};
   transition: ${Theme.transitions.normal};
-  :hover {
-    background-color: ${Theme.colors.darker};
-  }
 `;
 
 const Name = styled.span`
@@ -27,10 +27,11 @@ const Name = styled.span`
 
 export default class Tag extends React.PureComponent<ITagProps> {
   public render() {
+    const color = this.props.light ? Theme.colors.primary : Theme.colors.bg;
     return (
-      <TagContainer>
-        <FaTag style={{ color: Theme.colors.bg }} />
-        <Name>{this.props.name}</Name>
+      <TagContainer square={this.props.square} light={this.props.light}>
+        {this.props.multiple ? <FaTags style={{ color }} /> : <FaTag style={{ color }} />}
+        <Name>{this.props.children}</Name>
       </TagContainer>
     );
   }

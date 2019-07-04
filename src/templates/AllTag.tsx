@@ -17,7 +17,7 @@ export default class AllTagTemplate extends React.PureComponent<PageProps> {
           <HeaderBar />
           <Wrapper>
             <SectionTitle>Tags</SectionTitle>
-            <Content style={{ display: 'flex', flexWrap: 'wrap' }}>
+            <Content style={{ display: 'flex', flexFlow: 'row wrap' }}>
               {tags.map((tag, index: number) => (
                 <Link key={index} to={`/tags/${kebabCase(tag)}`} style={{ padding: '0.25em' }}>
                   {tag}
