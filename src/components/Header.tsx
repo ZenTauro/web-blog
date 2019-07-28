@@ -53,7 +53,7 @@ class Header extends PureComponent<IHeaderProps> {
             </ul>
           </div>
         </Nav>
-        <div style={{ backgroundColor: Theme.colors.primary, padding: '0.25em' }} />
+        <div style={{ backgroundColor: Theme.colors.primary, padding: '0.2em' }} />
       </div>
     );
   }

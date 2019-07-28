@@ -29,7 +29,7 @@ const Post = styled.article`
   box-shadow: rgba(0, 0, 0, 0.3) 0px 5px 20px 2px;
 
   background-color: #fff;
-  border-radius: 0.25em;
+  border-radius: 0.5em;
 
   margin-bottom: 0.5em;
   margin-top: 0.5em;

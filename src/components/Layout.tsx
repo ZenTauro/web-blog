@@ -57,7 +57,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Footer = styled.footer`
   text-align: center;
-  padding: 3rem 0;
+  padding: 2em 0;
   span {
     font-size: 0.75rem;
   }
