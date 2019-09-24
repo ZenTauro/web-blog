@@ -2,7 +2,14 @@ import styled from 'styled-components';
 import { media } from '../utils/media';
 
 export const Content = styled.div`
-  padding: 2rem 0;
+  @media ${media.tablet} {
+    padding: 1em 2em;
+  }
+  @media ${media.phone} {
+    padding: 1em 2em;
+  }
+  padding: ${(props: any) => (props.fullWidth ? 0 : '2em 4em')};
+  max-width: 100%;
   background-color: ${props => props.theme.colors.bg};
   form {
     p {
@@ -19,11 +26,5 @@ export const Content = styled.div`
         width: 100%;
       }
     }
-  }
-  @media ${media.tablet} {
-    padding: 3rem 3rem;
-  }
-  @media ${media.phone} {
-    padding: 2rem 1.5rem;
   }
 `;

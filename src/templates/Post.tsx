@@ -37,8 +37,8 @@ export default class PostPage extends React.PureComponent<Props> {
             <Helmet title={`${post.frontmatter.title} | ${config.siteTitle}`} />
             <HeaderBar />
             <BlogHeader post={post} fluid_image={image} />
-            <Wrapper>
-              <Content style={{ padding: '2em 4em', backgroundColor: Theme.colors.white }}>
+            <Wrapper fullWidth={true}>
+              <Content style={{ backgroundColor: Theme.colors.white }}>
                 <PostContent dangerouslySetInnerHTML={{ __html: post.html }} />
                 {post.frontmatter.tags ? (
                   <Subline>

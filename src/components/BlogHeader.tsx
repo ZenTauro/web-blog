@@ -2,6 +2,7 @@ import React from 'react';
 import BackgroudImage from 'gatsby-background-image';
 import { IChildImageSharp } from '../models/IImage';
 import Post from '../models/Post';
+import { media } from '../utils/media';
 import { SectionTitle } from '.';
 import { kebabCase } from 'lodash';
 import styled from 'styled-components';
@@ -14,6 +15,12 @@ interface IBlogHeaderProps {
 }
 
 export const BlogBg = styled(BackgroudImage)`
+  @media ${media.tablet} {
+    height: 40vh;
+  }
+  @media ${media.phone} {
+    height: 40vh;
+  }
   height: 75vh;
   z-index: -1;
   background-attachment: fixed;
@@ -26,6 +33,15 @@ export const BlogBg = styled(BackgroudImage)`
 `;
 
 const Wrapper = styled.div`
+  @media ${media.tablet} {
+    display: block;
+    margin: -20em 1rem 2em 1rem;
+  }
+  @media ${media.phone} {
+    display: block;
+    margin: -15em 1rem 2em 1rem;
+  }
+
   color: ${Theme.colors.white};
   margin: -15em 10em 2em 10em;
 `;

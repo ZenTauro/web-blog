@@ -47,7 +47,7 @@ export default class IndexPage extends Component<PageProps> {
         <HeaderBar />
         <PageWrapper>
           <Card>
-            <PageTitle>Zentauro's Blog</PageTitle>
+            <PageTitle>Zentauro</PageTitle>
           </Card>
         </PageWrapper>
       </Layout>
