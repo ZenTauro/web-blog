@@ -17,6 +17,10 @@ const typography = new Typography({
       name: config.bodyFontFamily,
       styles: ['400'],
     },
+    {
+      name: 'Fira Mono',
+      styles: ['400'],
+    },
   ],
 });
 

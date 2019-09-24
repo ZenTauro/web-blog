@@ -19,12 +19,12 @@ const GlobalStyle = createGlobalStyle`
     }
   }
   a {
-    color: ${theme.colors.grey.dark};
+    color: ${theme.colors.primary}
     text-decoration: none;
     transition: all ${theme.transitions.normal};
   }
   a:hover {
-    color: ${theme.colors.primary};
+    color: ${theme.colors.darker};
   }
   h1, h2, h3, h4 {
     color: ${theme.colors.grey.dark};
@@ -57,7 +57,7 @@ const GlobalStyle = createGlobalStyle`
 
 const Footer = styled.footer`
   text-align: center;
-  padding: 3rem 0;
+  padding: 2em 0;
   span {
     font-size: 0.75rem;
   }

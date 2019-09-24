@@ -31,6 +31,7 @@ export default class BlogPage extends React.Component<Props> {
         <Wrapper>
           <SectionTitle uppercase={true}>Latest posts ({totalCount})</SectionTitle>
           <Content
+            fullWidth={true}
             style={{
               display: 'flex',
               flexFlow: 'row wrap',
