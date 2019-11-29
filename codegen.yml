@@ -1,5 +1,9 @@
 ---
 schema: http://localhost:8000/__graphql
+documents:
+  - ./src/pages/**/*.tsx
+  - ./src/templates/**/*.tsx
+  - ./node_modules/gatsby-*/**/*.js
 generates:
   ./src/graphqlTypes.ts:
     plugins:

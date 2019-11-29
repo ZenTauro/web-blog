@@ -3355,3 +3355,140 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>,
 };
 
+export type LayoutQueryQueryVariables = {};
+
+
+export type LayoutQueryQuery = (
+  { __typename?: 'Query' }
+  & { site: Maybe<(
+    { __typename?: 'Site' }
+    & Pick<Site, 'buildTime'>
+  )> }
+);
+
+export type Unnamed_1_QueryVariables = {};
+
+
+export type Unnamed_1_Query = (
+  { __typename?: 'Query' }
+  & { allMarkdownRemark: (
+    { __typename?: 'MarkdownRemarkConnection' }
+    & Pick<MarkdownRemarkConnection, 'totalCount'>
+    & { edges: Array<(
+      { __typename?: 'MarkdownRemarkEdge' }
+      & { node: (
+        { __typename?: 'MarkdownRemark' }
+        & Pick<MarkdownRemark, 'timeToRead'>
+        & { fields: Maybe<(
+          { __typename?: 'MarkdownRemarkFields' }
+          & Pick<MarkdownRemarkFields, 'slug'>
+        )>, frontmatter: Maybe<(
+          { __typename?: 'MarkdownRemarkFrontmatter' }
+          & Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'category'>
+        )> }
+      ) }
+    )> }
+  ) }
+);
+
+export type Unnamed_2_QueryVariables = {};
+
+
+export type Unnamed_2_Query = (
+  { __typename?: 'Query' }
+  & { allFile: (
+    { __typename?: 'FileConnection' }
+    & { edges: Array<(
+      { __typename?: 'FileEdge' }
+      & { node: (
+        { __typename?: 'File' }
+        & Pick<File, 'relativePath' | 'prettySize' | 'extension' | 'birthTime'>
+      ) }
+    )> }
+  ) }
+);
+
+export type Unnamed_3_QueryVariables = {
+  skip: Scalars['Int'],
+  limit: Scalars['Int']
+};
+
+
+export type Unnamed_3_Query = (
+  { __typename?: 'Query' }
+  & { allMarkdownRemark: (
+    { __typename?: 'MarkdownRemarkConnection' }
+    & Pick<MarkdownRemarkConnection, 'totalCount'>
+    & { edges: Array<(
+      { __typename?: 'MarkdownRemarkEdge' }
+      & { node: (
+        { __typename?: 'MarkdownRemark' }
+        & Pick<MarkdownRemark, 'excerpt' | 'timeToRead'>
+        & { fields: Maybe<(
+          { __typename?: 'MarkdownRemarkFields' }
+          & Pick<MarkdownRemarkFields, 'slug'>
+        )>, frontmatter: Maybe<(
+          { __typename?: 'MarkdownRemarkFrontmatter' }
+          & Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'category'>
+          & { image: Maybe<(
+            { __typename?: 'File' }
+            & { childImageSharp: Maybe<(
+              { __typename?: 'ImageSharp' }
+              & { fixed: Maybe<(
+                { __typename?: 'ImageSharpFixed' }
+                & Pick<ImageSharpFixed, 'base64' | 'src' | 'srcWebp' | 'srcSetWebp'>
+              )>, fluid: Maybe<(
+                { __typename?: 'ImageSharpFluid' }
+                & Pick<ImageSharpFluid, 'base64' | 'src' | 'srcWebp' | 'srcSetWebp'>
+              )> }
+            )> }
+          )> }
+        )> }
+      ) }
+    )> }
+  ) }
+);
+
+export type Unnamed_4_QueryVariables = {
+  slug: Scalars['String']
+};
+
+
+export type Unnamed_4_Query = (
+  { __typename?: 'Query' }
+  & { markdownRemark: Maybe<(
+    { __typename?: 'MarkdownRemark' }
+    & Pick<MarkdownRemark, 'html' | 'timeToRead'>
+    & { fields: Maybe<(
+      { __typename?: 'MarkdownRemarkFields' }
+      & Pick<MarkdownRemarkFields, 'slug'>
+    )>, frontmatter: Maybe<(
+      { __typename?: 'MarkdownRemarkFrontmatter' }
+      & Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'category' | 'tags' | 'banner'>
+      & { image: Maybe<(
+        { __typename?: 'File' }
+        & { childImageSharp: Maybe<(
+          { __typename?: 'ImageSharp' }
+          & { fluid: Maybe<(
+            { __typename?: 'ImageSharpFluid' }
+            & Pick<ImageSharpFluid, 'aspectRatio' | 'base64' | 'originalImg' | 'originalName' | 'presentationHeight' | 'presentationWidth' | 'sizes' | 'src' | 'srcSet' | 'srcSetWebp' | 'srcWebp' | 'tracedSVG'>
+          )> }
+        )> }
+      )> }
+    )> }
+  )> }
+);
+
+export type Unnamed_5_QueryVariables = {};
+
+
+export type Unnamed_5_Query = (
+  { __typename?: 'Query' }
+  & { imageSharp: Maybe<(
+    { __typename?: 'ImageSharp' }
+    & { fluid: Maybe<(
+      { __typename?: 'ImageSharpFluid' }
+      & Pick<ImageSharpFluid, 'base64' | 'tracedSVG' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes' | 'originalImg' | 'originalName' | 'presentationWidth' | 'presentationHeight'>
+    )> }
+  )> }
+);
